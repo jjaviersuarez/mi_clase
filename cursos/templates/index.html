@@ -1,13 +1,11 @@
-{% extends 'base.html '%} {% block content %}
-<div class="row">
-  <div class="d-flex justify-content-center">
-    <div class="col-md-8">
-      <div class="card">
-        <div class="card-body">
-          <h1>Bienvenido a tu aplicación Mi Clase</h1>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+{% extends 'base.html '%} 
+{% block content %}
+<table>
+    {% for curso in cursos %}
+    <tr>
+      <td>{{ curso.id }}</td>
+      <td>{{ curso.nombre }}</td>
+    </tr>
+    {% endfor %}
+</table>
 {% endblock %}

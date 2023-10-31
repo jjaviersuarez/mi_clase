@@ -1,0 +1,31 @@
+{% extends 'base.html '%} 
+{% block content %}
+<div class="row">
+  <form action={% url "insertar" %} method="post">
+    {% csrf_token %}
+    <div class="row">
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Jenier">
+          </div>
+          <div class="mb-3">
+            <label for="descripcion" class="form-label">Descripcion</label>
+            <input type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Hola">
+          </div>
+          <div class="mb-3">
+            <label for="aula" class="form-label">Aula</label>
+            <input type="number" class="form-control" id="aula" name="aula" placeholder="8101">
+          </div>
+          <div class="mb-3">
+            <label for="fecha_creacion" class="form-label">Fecha de Creación</label>
+            <input type="date" class="form-control" id="fecha_creacion" name="fecha_creacion" placeholder="14/10/2023">
+          </div>
+          <div class="mb-3">
+            <label for="estado" class="form-label">Estado</label>
+            <input type="number" class="form-control" id="estado" name="estado" placeholder="1">
+          </div>
+    </div>
+    <button type="submit">Enviar</button>
+</form>
+</div>
+{% endblock %}

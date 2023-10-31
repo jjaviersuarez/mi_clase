@@ -7,3 +7,11 @@ urlpatterns = [
     path('',views.index),
     path('cursos/',include('cursos.urls'))
 ]
+
+"""
+CRUD
+C: Create
+R: Read
+U: Update
+D: Delete
+"""
