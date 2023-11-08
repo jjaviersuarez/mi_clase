@@ -1,23 +1,24 @@
 {% extends 'base.html '%} 
 {% block content %}
 <div class="row">
-  <form action={% url "insertar" %} method="post">
+  <form action={% url "actualizar" %} method="post">
     {% csrf_token %}
     <div class="row">
+      <input type="hidden" name="id" id="id" value="{{ curso.id }}">
         <div class="mb-3">
             <label for="nombre" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="nombre" name="nombre" value="{% datos_curso.curso[nombre] %}">
+            <input type="text" class="form-control" id="nombre" name="nombre" value="{{ curso.nombre }}">
           </div>
           <div class="mb-3">
             <label for="descripcion" class="form-label">Descripcion</label>
-            <input type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Hola">
+            <input type="text" class="form-control" id="descripcion" name="descripcion" value="{{ curso.descripcion }}" >
           </div>
           <div class="mb-3">
             <label for="aula" class="form-label">Aula</label>
-            <input type="number" class="form-control" id="aula" name="aula" placeholder="8101">
+            <input type="number" class="form-control" id="aula" name="aula" value="{{ curso.aula }}">
           </div>
     </div>
-    <button class="btn btn-secondary" type="submit">Enviar</button>
+    <button class="btn btn-primary" type="submit">Actualizar</button>
 </form>
 </div>
 {% endblock %}
