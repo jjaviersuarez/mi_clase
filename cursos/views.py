@@ -8,6 +8,7 @@ from django.contrib.auth import logout
 # Create your views here.
 
 #Página Index de Nuestra Aplicación
+@login_required
 def index(request):
     return render(request,'index.html')
 
